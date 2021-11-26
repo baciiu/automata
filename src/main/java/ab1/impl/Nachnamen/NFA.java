@@ -3,18 +3,19 @@ package ab1.impl.Nachnamen;
 import ab1.DFA;
 import ab1.exceptions.IllegalCharacterException;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
 public class NFA implements ab1.NFA {
 
-    private Set<Character> alphabet = new HashSet<>();
-    private Set<Integer> acceptingStates = new HashSet<>(); // endzustände
-    private int initialState = 0; // startzustand
-    private Set<Character[][]> transitions = new HashSet<>();
-    private int currentState = 0;
-    private int numStates = 0; // anzahl von Zustände
+    private Set<Character> alphabet ;
+    private Set<Integer> acceptingStates; // endzustände
+    private int initialState ; // startzustand
+    private Set<Character>[][] transitions ;
+    private int currentState ;
+    private int numStates ; // anzahl von Zustände
     private final Character epsilon = null ; // leeres wort
 
 
@@ -57,7 +58,7 @@ public class NFA implements ab1.NFA {
     }
 
     @Override
-    public Set<Character[][]> getTransitions() {
+    public Set<Character>[][] getTransitions() {
         return this.transitions;
     }
 
@@ -71,17 +72,25 @@ public class NFA implements ab1.NFA {
             throw new IllegalCharacterException();
         }
 
-        /**    NOT SURE */
-         Character[][] transition = new Character[numStates][numStates];
-        transition[fromState][toState] = c ;
-
-        getTransitions().add(transition);
+        getTransitions()[fromState][toState].add(c);
 
     }
+
 
     @Override
     public void clearTransitions(int fromState, Character c) throws IllegalStateException {
 
+        if ( !(getInitialState() <= fromState) && !(fromState <= getNumStates()) ){
+            throw new IllegalStateException();
+        }
+
+        for (int j = 0 ; j <= getTransitions()[fromState].length; j++){
+
+            if (getTransitions()[fromState][j].contains(c)){
+                getTransitions()[fromState][j].remove(c);
+            }
+            getTransitions()[fromState][j].clear();
+        }
     }
 
     @Override
@@ -91,7 +100,7 @@ public class NFA implements ab1.NFA {
 
     @Override
     public int getNumStates() {
-        return 0;
+        return this.numStates;
     }
 
     @Override

@@ -54,7 +54,7 @@ public class DFA  implements ab1.DFA {
     }
 
     @Override
-    public Set<Character[][]> getTransitions() {
+    public Set<Character>[][] getTransitions() {
         return null;
     }
 
