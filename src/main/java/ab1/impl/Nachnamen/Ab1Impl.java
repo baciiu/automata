@@ -1,5 +1,7 @@
 package ab1.impl.Nachnamen;
 
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Set;
 
 import ab1.Ab1;
@@ -9,15 +11,29 @@ import ab1.exceptions.IllegalCharacterException;
 
 public class Ab1Impl implements Ab1 {
 
+	private Set<Character> alphabet = new HashSet<>();
+	private Set<Integer> acceptingStates = new HashSet<>();
+	private int initialState = 0;
+	private Set<Character>[][] transitions ;
+	private int currentState = 0;
+	private int numStates = 0;
+	private final char epsilon = ' ';
+
+
+
 	@Override
 	public NFA createNFA(int numStates, Set<Character> characters, Set<Integer> acceptingStates, int initialState) {
 		// TODO Auto-generated method stub
+
+
 		return null;
 	}
 
 	@Override
 	public DFA createDFA(int numStates, Set<Character> characters, Set<Integer> acceptingStates, int initialState) {
 		// TODO Auto-generated method stub
+
+
 		return null;
 	}
 
