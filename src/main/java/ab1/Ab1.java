@@ -38,4 +38,5 @@ public interface Ab1 {
 	 * @return einen DFA
 	 */
 	public DFA createDFA(int numStates, Set<Character> alphabet, Set<Integer> acceptingStates, int initialState);
+
 }
