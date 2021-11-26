@@ -3,9 +3,7 @@ package ab1.impl.Nachnamen;
 import ab1.DFA;
 import ab1.exceptions.IllegalCharacterException;
 
-import java.util.Arrays;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Set;
 
 public class NFA implements ab1.NFA {
@@ -14,7 +12,6 @@ public class NFA implements ab1.NFA {
     private Set<Integer> acceptingStates; // endzustände
     private int initialState ; // startzustand
     private Set<Character>[][] transitions ;
-    private int currentState ;
     private int numStates ; // anzahl von Zustände
     private final Character epsilon = null ; // leeres wort
 
@@ -42,13 +39,12 @@ public class NFA implements ab1.NFA {
         return this.initialState;
     }
 
-    @Override
+    @Override // DONE
     public boolean isAcceptingState(int s) throws IllegalStateException {
 
        if ( !(getInitialState() <= s) && !(s <= getNumStates())){
             throw new IllegalStateException();
        }
-
 
        if (getAcceptingStates().contains(s)){
            return true;
@@ -57,12 +53,12 @@ public class NFA implements ab1.NFA {
        return false;
     }
 
-    @Override
+    @Override // DONE
     public Set<Character>[][] getTransitions() {
         return this.transitions;
     }
 
-    @Override
+    @Override // DONE
     public void setTransition(int fromState, Character c, int toState) throws IllegalStateException, IllegalCharacterException {
 
         if ( !(getInitialState() <= fromState) && !(fromState <= getNumStates()) || !(getInitialState() <= toState) && !(toState <= getNumStates())){
@@ -77,7 +73,7 @@ public class NFA implements ab1.NFA {
     }
 
 
-    @Override
+    @Override // DONE
     public void clearTransitions(int fromState, Character c) throws IllegalStateException {
 
         if ( !(getInitialState() <= fromState) && !(fromState <= getNumStates()) ){
@@ -93,9 +89,26 @@ public class NFA implements ab1.NFA {
         }
     }
 
-    @Override
+    @Override // DONE
     public Set<Integer> getNextStates(int state, Character c) throws IllegalCharacterException, IllegalStateException {
-        return null;
+
+        if ( !(getInitialState() <= state) && !(state <= getNumStates()) ){
+            throw new IllegalStateException();
+        }
+
+        if (!getAlphabet().contains(c)){
+            throw new IllegalCharacterException();
+        }
+        Set<Integer> nextstates = new HashSet<>();
+
+        for (int j = 0 ; j <= getTransitions()[state].length; j++) {
+
+            if (getTransitions()[state][j].contains(c)) {
+                nextstates.add(j);
+            }
+        }
+
+        return nextstates;
     }
 
     @Override
@@ -143,8 +156,17 @@ public class NFA implements ab1.NFA {
         return null;
     }
 
-    @Override
+    @Override // just the error
     public Boolean accepts(String w) throws IllegalCharacterException {
+
+        for (int i = 0 ; i < w.length(); i++) {
+            if (this.getAlphabet().contains(w.charAt(i))){
+                throw new IllegalCharacterException();
+            }
+        }
+
+
+
         return null;
     }
 
