@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ab1.Ab1Tests" tests="12" skipped="0" failures="12" errors="0" timestamp="2021-11-26T13:34:23" hostname="Ales-MacBook-Air.local" time="0.368">
+<testsuite name="ab1.Ab1Tests" tests="12" skipped="0" failures="12" errors="0" timestamp="2021-11-26T20:03:08" hostname="Ales-MacBook-Air.local" time="0.182">
   <properties/>
-  <testcase name="DFA_equals_NFA()" classname="ab1.Ab1Tests" time="0.037">
-    <failure message="java.lang.NullPointerException: Cannot invoke &quot;ab1.NFA.setTransition(int, java.lang.Character, int)&quot; because &quot;this.n10&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;ab1.NFA.setTransition(int, java.lang.Character, int)&quot; because &quot;this.n10&quot; is null
-	at ab1.Ab1Tests.InitializeNFA10(Ab1Tests.java:279)
+  <testcase name="DFA_equals_NFA()" classname="ab1.Ab1Tests" time="0.042">
+    <failure message="java.lang.ClassCastException: class [[Ljava.util.ArrayList; cannot be cast to class [[Ljava.util.Set; ([[Ljava.util.ArrayList; and [[Ljava.util.Set; are in module java.base of loader 'bootstrap')" type="java.lang.ClassCastException">java.lang.ClassCastException: class [[Ljava.util.ArrayList; cannot be cast to class [[Ljava.util.Set; ([[Ljava.util.ArrayList; and [[Ljava.util.Set; are in module java.base of loader 'bootstrap')
+	at ab1.impl.Nachnamen.NFA.&lt;init&gt;(NFA.java:27)
+	at ab1.impl.Nachnamen.Ab1Impl.createNFA(Ab1Impl.java:18)
+	at ab1.Ab1Tests.InitializeNFA10(Ab1Tests.java:277)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -94,8 +96,10 @@
 </failure>
   </testcase>
   <testcase name="NFA_Language()" classname="ab1.Ab1Tests" time="0.002">
-    <failure message="java.lang.NullPointerException: Cannot invoke &quot;ab1.NFA.setTransition(int, java.lang.Character, int)&quot; because &quot;this.n10&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;ab1.NFA.setTransition(int, java.lang.Character, int)&quot; because &quot;this.n10&quot; is null
-	at ab1.Ab1Tests.InitializeNFA10(Ab1Tests.java:279)
+    <failure message="java.lang.ClassCastException: class [[Ljava.util.ArrayList; cannot be cast to class [[Ljava.util.Set; ([[Ljava.util.ArrayList; and [[Ljava.util.Set; are in module java.base of loader 'bootstrap')" type="java.lang.ClassCastException">java.lang.ClassCastException: class [[Ljava.util.ArrayList; cannot be cast to class [[Ljava.util.Set; ([[Ljava.util.ArrayList; and [[Ljava.util.Set; are in module java.base of loader 'bootstrap')
+	at ab1.impl.Nachnamen.NFA.&lt;init&gt;(NFA.java:27)
+	at ab1.impl.Nachnamen.Ab1Impl.createNFA(Ab1Impl.java:18)
+	at ab1.Ab1Tests.InitializeNFA10(Ab1Tests.java:277)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -185,9 +189,11 @@
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="NFA_Operations_Minus()" classname="ab1.Ab1Tests" time="0.011">
-    <failure message="java.lang.NullPointerException: Cannot invoke &quot;ab1.NFA.setTransition(int, java.lang.Character, int)&quot; because &quot;this.n10&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;ab1.NFA.setTransition(int, java.lang.Character, int)&quot; because &quot;this.n10&quot; is null
-	at ab1.Ab1Tests.InitializeNFA10(Ab1Tests.java:279)
+  <testcase name="NFA_Operations_Minus()" classname="ab1.Ab1Tests" time="0.001">
+    <failure message="java.lang.ClassCastException: class [[Ljava.util.ArrayList; cannot be cast to class [[Ljava.util.Set; ([[Ljava.util.ArrayList; and [[Ljava.util.Set; are in module java.base of loader 'bootstrap')" type="java.lang.ClassCastException">java.lang.ClassCastException: class [[Ljava.util.ArrayList; cannot be cast to class [[Ljava.util.Set; ([[Ljava.util.ArrayList; and [[Ljava.util.Set; are in module java.base of loader 'bootstrap')
+	at ab1.impl.Nachnamen.NFA.&lt;init&gt;(NFA.java:27)
+	at ab1.impl.Nachnamen.Ab1Impl.createNFA(Ab1Impl.java:18)
+	at ab1.Ab1Tests.InitializeNFA10(Ab1Tests.java:277)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -277,9 +283,11 @@
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="NFA_Operations_Union()" classname="ab1.Ab1Tests" time="0.094">
-    <failure message="java.lang.NullPointerException: Cannot invoke &quot;ab1.NFA.setTransition(int, java.lang.Character, int)&quot; because &quot;this.n10&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;ab1.NFA.setTransition(int, java.lang.Character, int)&quot; because &quot;this.n10&quot; is null
-	at ab1.Ab1Tests.InitializeNFA10(Ab1Tests.java:279)
+  <testcase name="NFA_Operations_Union()" classname="ab1.Ab1Tests" time="0.001">
+    <failure message="java.lang.ClassCastException: class [[Ljava.util.ArrayList; cannot be cast to class [[Ljava.util.Set; ([[Ljava.util.ArrayList; and [[Ljava.util.Set; are in module java.base of loader 'bootstrap')" type="java.lang.ClassCastException">java.lang.ClassCastException: class [[Ljava.util.ArrayList; cannot be cast to class [[Ljava.util.Set; ([[Ljava.util.ArrayList; and [[Ljava.util.Set; are in module java.base of loader 'bootstrap')
+	at ab1.impl.Nachnamen.NFA.&lt;init&gt;(NFA.java:27)
+	at ab1.impl.Nachnamen.Ab1Impl.createNFA(Ab1Impl.java:18)
+	at ab1.Ab1Tests.InitializeNFA10(Ab1Tests.java:277)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -369,9 +377,11 @@
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="NFA_Operations_Complement()" classname="ab1.Ab1Tests" time="0.045">
-    <failure message="java.lang.NullPointerException: Cannot invoke &quot;ab1.NFA.setTransition(int, java.lang.Character, int)&quot; because &quot;this.n10&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;ab1.NFA.setTransition(int, java.lang.Character, int)&quot; because &quot;this.n10&quot; is null
-	at ab1.Ab1Tests.InitializeNFA10(Ab1Tests.java:279)
+  <testcase name="NFA_Operations_Complement()" classname="ab1.Ab1Tests" time="0.002">
+    <failure message="java.lang.ClassCastException: class [[Ljava.util.ArrayList; cannot be cast to class [[Ljava.util.Set; ([[Ljava.util.ArrayList; and [[Ljava.util.Set; are in module java.base of loader 'bootstrap')" type="java.lang.ClassCastException">java.lang.ClassCastException: class [[Ljava.util.ArrayList; cannot be cast to class [[Ljava.util.Set; ([[Ljava.util.ArrayList; and [[Ljava.util.Set; are in module java.base of loader 'bootstrap')
+	at ab1.impl.Nachnamen.NFA.&lt;init&gt;(NFA.java:27)
+	at ab1.impl.Nachnamen.Ab1Impl.createNFA(Ab1Impl.java:18)
+	at ab1.Ab1Tests.InitializeNFA10(Ab1Tests.java:277)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -461,9 +471,11 @@
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="ToDFA()" classname="ab1.Ab1Tests" time="0.022">
-    <failure message="java.lang.NullPointerException: Cannot invoke &quot;ab1.NFA.setTransition(int, java.lang.Character, int)&quot; because &quot;this.n10&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;ab1.NFA.setTransition(int, java.lang.Character, int)&quot; because &quot;this.n10&quot; is null
-	at ab1.Ab1Tests.InitializeNFA10(Ab1Tests.java:279)
+  <testcase name="ToDFA()" classname="ab1.Ab1Tests" time="0.001">
+    <failure message="java.lang.ClassCastException: class [[Ljava.util.ArrayList; cannot be cast to class [[Ljava.util.Set; ([[Ljava.util.ArrayList; and [[Ljava.util.Set; are in module java.base of loader 'bootstrap')" type="java.lang.ClassCastException">java.lang.ClassCastException: class [[Ljava.util.ArrayList; cannot be cast to class [[Ljava.util.Set; ([[Ljava.util.ArrayList; and [[Ljava.util.Set; are in module java.base of loader 'bootstrap')
+	at ab1.impl.Nachnamen.NFA.&lt;init&gt;(NFA.java:27)
+	at ab1.impl.Nachnamen.Ab1Impl.createNFA(Ab1Impl.java:18)
+	at ab1.Ab1Tests.InitializeNFA10(Ab1Tests.java:277)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -553,9 +565,11 @@
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="NFA_Operations_Plus()" classname="ab1.Ab1Tests" time="0.001">
-    <failure message="java.lang.NullPointerException: Cannot invoke &quot;ab1.NFA.setTransition(int, java.lang.Character, int)&quot; because &quot;this.n10&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;ab1.NFA.setTransition(int, java.lang.Character, int)&quot; because &quot;this.n10&quot; is null
-	at ab1.Ab1Tests.InitializeNFA10(Ab1Tests.java:279)
+  <testcase name="NFA_Operations_Plus()" classname="ab1.Ab1Tests" time="0.003">
+    <failure message="java.lang.ClassCastException: class [[Ljava.util.ArrayList; cannot be cast to class [[Ljava.util.Set; ([[Ljava.util.ArrayList; and [[Ljava.util.Set; are in module java.base of loader 'bootstrap')" type="java.lang.ClassCastException">java.lang.ClassCastException: class [[Ljava.util.ArrayList; cannot be cast to class [[Ljava.util.Set; ([[Ljava.util.ArrayList; and [[Ljava.util.Set; are in module java.base of loader 'bootstrap')
+	at ab1.impl.Nachnamen.NFA.&lt;init&gt;(NFA.java:27)
+	at ab1.impl.Nachnamen.Ab1Impl.createNFA(Ab1Impl.java:18)
+	at ab1.Ab1Tests.InitializeNFA10(Ab1Tests.java:277)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -645,9 +659,11 @@
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="NFA_Operations_Star()" classname="ab1.Ab1Tests" time="0.019">
-    <failure message="java.lang.NullPointerException: Cannot invoke &quot;ab1.NFA.setTransition(int, java.lang.Character, int)&quot; because &quot;this.n10&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;ab1.NFA.setTransition(int, java.lang.Character, int)&quot; because &quot;this.n10&quot; is null
-	at ab1.Ab1Tests.InitializeNFA10(Ab1Tests.java:279)
+  <testcase name="NFA_Operations_Star()" classname="ab1.Ab1Tests" time="0.001">
+    <failure message="java.lang.ClassCastException: class [[Ljava.util.ArrayList; cannot be cast to class [[Ljava.util.Set; ([[Ljava.util.ArrayList; and [[Ljava.util.Set; are in module java.base of loader 'bootstrap')" type="java.lang.ClassCastException">java.lang.ClassCastException: class [[Ljava.util.ArrayList; cannot be cast to class [[Ljava.util.Set; ([[Ljava.util.ArrayList; and [[Ljava.util.Set; are in module java.base of loader 'bootstrap')
+	at ab1.impl.Nachnamen.NFA.&lt;init&gt;(NFA.java:27)
+	at ab1.impl.Nachnamen.Ab1Impl.createNFA(Ab1Impl.java:18)
+	at ab1.Ab1Tests.InitializeNFA10(Ab1Tests.java:277)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -738,8 +754,10 @@
 </failure>
   </testcase>
   <testcase name="NFA_Operations_Concat()" classname="ab1.Ab1Tests" time="0.002">
-    <failure message="java.lang.NullPointerException: Cannot invoke &quot;ab1.NFA.setTransition(int, java.lang.Character, int)&quot; because &quot;this.n10&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;ab1.NFA.setTransition(int, java.lang.Character, int)&quot; because &quot;this.n10&quot; is null
-	at ab1.Ab1Tests.InitializeNFA10(Ab1Tests.java:279)
+    <failure message="java.lang.ClassCastException: class [[Ljava.util.ArrayList; cannot be cast to class [[Ljava.util.Set; ([[Ljava.util.ArrayList; and [[Ljava.util.Set; are in module java.base of loader 'bootstrap')" type="java.lang.ClassCastException">java.lang.ClassCastException: class [[Ljava.util.ArrayList; cannot be cast to class [[Ljava.util.Set; ([[Ljava.util.ArrayList; and [[Ljava.util.Set; are in module java.base of loader 'bootstrap')
+	at ab1.impl.Nachnamen.NFA.&lt;init&gt;(NFA.java:27)
+	at ab1.impl.Nachnamen.Ab1Impl.createNFA(Ab1Impl.java:18)
+	at ab1.Ab1Tests.InitializeNFA10(Ab1Tests.java:277)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -830,8 +848,10 @@
 </failure>
   </testcase>
   <testcase name="NFA_Equals()" classname="ab1.Ab1Tests" time="0.002">
-    <failure message="java.lang.NullPointerException: Cannot invoke &quot;ab1.NFA.setTransition(int, java.lang.Character, int)&quot; because &quot;this.n10&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;ab1.NFA.setTransition(int, java.lang.Character, int)&quot; because &quot;this.n10&quot; is null
-	at ab1.Ab1Tests.InitializeNFA10(Ab1Tests.java:279)
+    <failure message="java.lang.ClassCastException: class [[Ljava.util.ArrayList; cannot be cast to class [[Ljava.util.Set; ([[Ljava.util.ArrayList; and [[Ljava.util.Set; are in module java.base of loader 'bootstrap')" type="java.lang.ClassCastException">java.lang.ClassCastException: class [[Ljava.util.ArrayList; cannot be cast to class [[Ljava.util.Set; ([[Ljava.util.ArrayList; and [[Ljava.util.Set; are in module java.base of loader 'bootstrap')
+	at ab1.impl.Nachnamen.NFA.&lt;init&gt;(NFA.java:27)
+	at ab1.impl.Nachnamen.Ab1Impl.createNFA(Ab1Impl.java:18)
+	at ab1.Ab1Tests.InitializeNFA10(Ab1Tests.java:277)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -921,9 +941,11 @@
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="NFA_Operations_Intersection()" classname="ab1.Ab1Tests" time="0.043">
-    <failure message="java.lang.NullPointerException: Cannot invoke &quot;ab1.NFA.setTransition(int, java.lang.Character, int)&quot; because &quot;this.n10&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;ab1.NFA.setTransition(int, java.lang.Character, int)&quot; because &quot;this.n10&quot; is null
-	at ab1.Ab1Tests.InitializeNFA10(Ab1Tests.java:279)
+  <testcase name="NFA_Operations_Intersection()" classname="ab1.Ab1Tests" time="0.002">
+    <failure message="java.lang.ClassCastException: class [[Ljava.util.ArrayList; cannot be cast to class [[Ljava.util.Set; ([[Ljava.util.ArrayList; and [[Ljava.util.Set; are in module java.base of loader 'bootstrap')" type="java.lang.ClassCastException">java.lang.ClassCastException: class [[Ljava.util.ArrayList; cannot be cast to class [[Ljava.util.Set; ([[Ljava.util.ArrayList; and [[Ljava.util.Set; are in module java.base of loader 'bootstrap')
+	at ab1.impl.Nachnamen.NFA.&lt;init&gt;(NFA.java:27)
+	at ab1.impl.Nachnamen.Ab1Impl.createNFA(Ab1Impl.java:18)
+	at ab1.Ab1Tests.InitializeNFA10(Ab1Tests.java:277)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1013,9 +1035,11 @@
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="NFA_Properties()" classname="ab1.Ab1Tests" time="0.001">
-    <failure message="java.lang.NullPointerException: Cannot invoke &quot;ab1.NFA.setTransition(int, java.lang.Character, int)&quot; because &quot;this.n10&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;ab1.NFA.setTransition(int, java.lang.Character, int)&quot; because &quot;this.n10&quot; is null
-	at ab1.Ab1Tests.InitializeNFA10(Ab1Tests.java:279)
+  <testcase name="NFA_Properties()" classname="ab1.Ab1Tests" time="0.088">
+    <failure message="java.lang.ClassCastException: class [[Ljava.util.ArrayList; cannot be cast to class [[Ljava.util.Set; ([[Ljava.util.ArrayList; and [[Ljava.util.Set; are in module java.base of loader 'bootstrap')" type="java.lang.ClassCastException">java.lang.ClassCastException: class [[Ljava.util.ArrayList; cannot be cast to class [[Ljava.util.Set; ([[Ljava.util.ArrayList; and [[Ljava.util.Set; are in module java.base of loader 'bootstrap')
+	at ab1.impl.Nachnamen.NFA.&lt;init&gt;(NFA.java:27)
+	at ab1.impl.Nachnamen.Ab1Impl.createNFA(Ab1Impl.java:18)
+	at ab1.Ab1Tests.InitializeNFA10(Ab1Tests.java:277)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
