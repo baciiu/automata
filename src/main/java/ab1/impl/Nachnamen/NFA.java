@@ -21,9 +21,17 @@ public class NFA implements ab1.NFA {
     public NFA(int numStates, Set<Character> characters, Set<Integer> acceptingStates, int initialState) {
 
         this.numStates = numStates;
-        this.alphabet = characters;
-        this.acceptingStates = acceptingStates;
+        this.alphabet = new HashSet<>(characters);
+        this.acceptingStates = new HashSet<>(acceptingStates);
         this.initialState = initialState;
+
+        this.transitions = new Set[numStates][numStates];
+
+        for (int i = 0 ; i < numStates; i++){
+            for (int j = 0; j < numStates; j++){
+                this.transitions[i][j] = new HashSet<>();
+            }
+        }
 
         this.transitions = new Set[numStates][numStates];
 
@@ -75,11 +83,16 @@ public class NFA implements ab1.NFA {
         if ( !(getInitialState() <= fromState) && !(fromState <= getNumStates()) || !(getInitialState() <= toState) && !(toState <= getNumStates())){
             throw new IllegalStateException();
         }
-        if (!getAlphabet().contains(c)){
+        if (!getAlphabet().contains(c) && c != epsilon ){
             throw new IllegalCharacterException();
         }
 
+        if ( c == epsilon ){
         this.transitions[fromState][toState].add(c);
+        }
+        else
+            this.transitions[fromState][toState].add(c);
+
 
     }
 

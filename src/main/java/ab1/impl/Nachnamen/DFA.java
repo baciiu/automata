@@ -21,6 +21,11 @@ public class DFA extends NFA implements ab1.DFA {
     public DFA(int numStates, Set<Character> characters, Set<Integer> acceptingStates, int initialState) {
         super(numStates, characters, acceptingStates, initialState);
 
+        this.numStates = numStates;
+        this.alphabet = new HashSet<>(characters);
+        this.acceptingStates = new HashSet<>(acceptingStates);
+        this.initialState = initialState;
+
         this.transitions = new Set[numStates][numStates];
 
         for (int i = 0 ; i < numStates; i++){
@@ -28,6 +33,7 @@ public class DFA extends NFA implements ab1.DFA {
                 this.transitions[i][j] = new HashSet<>();
             }
         }
+
     }
 
     @Override
