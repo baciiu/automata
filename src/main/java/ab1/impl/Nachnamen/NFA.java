@@ -6,6 +6,7 @@ import ab1.exceptions.IllegalCharacterException;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class NFA implements ab1.NFA {
 
@@ -142,9 +143,46 @@ public class NFA implements ab1.NFA {
         return this.numStates;
     }
 
+
+    public static final Set<Character> chars = new HashSet<>();
+
+    static {
+        chars.add('a');
+        chars.add('b');
+        chars.add('c');
+    }
+
     @Override
     public ab1.NFA union(ab1.NFA a) {
-        return null;
+        Set<Integer> set1= this.getAcceptingStates();
+        Set<Integer> set2= a.getAcceptingStates();
+
+        Set<Integer> accept= new TreeSet<>();
+        accept.retainAll(set1);
+        accept.retainAll(set2);
+
+        NFA nfa=new NFA(accept.size(),chars,accept,0);
+
+        Set[][] trans1=this.getTransitions();
+        Set[][] trans2=a.getTransitions();
+
+        nfa.setTransition(0,null,1); // 1,2,3,4..
+        nfa.setTransition(0,null,2); // 1,2,3,4.. size==4 5,6,7,8
+
+       /* int size = a.getNumStates();
+        for(int i=0;i<trans2.length;i++){
+           for (int j=0;j<trans2[i].length;j++){
+               trans2[i][j]=   trans2[i][j] // (x,y,z)
+           }
+        }*/
+
+        for(int i=0;i<trans1.length;i++) {
+            for (int j=0;i<trans1.length;j++){
+           // nfa.setTransition(); //todo
+            }
+        }
+
+        return nfa;
     }
 
     @Override
@@ -187,18 +225,20 @@ public class NFA implements ab1.NFA {
 
         for (int i = 0 ; i < w.length(); i++) {
             if (this.getAlphabet().contains(w.charAt(i))){
-                throw new IllegalCharacterException();
+               throw new IllegalCharacterException();
             }
         }
 
 
 
-        return null;
+        return true;
     }
 
     @Override
     public Boolean acceptsNothing() {
-        return null;
+     if (this.acceptingStates.size()==0){
+         return true;
+     }else return false;
     }
 
     @Override
