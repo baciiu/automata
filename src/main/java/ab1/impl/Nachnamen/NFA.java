@@ -4,6 +4,7 @@ import ab1.DFA;
 import ab1.exceptions.IllegalCharacterException;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 public class NFA implements ab1.NFA {
@@ -207,11 +208,45 @@ public class NFA implements ab1.NFA {
 
     @Override
     public Boolean acceptsEpsilon() {
-        return null;
+
+        if (getAlphabet().contains(epsilon)){
+            return true;
+        }
+
+        return false;
     }
 
     @Override
     public boolean subSetOf(ab1.NFA b) {
         return false;
+    }
+
+    @Override
+    public boolean equals(Object b){
+
+        // self check
+        if (this == b)
+            return true;
+        // null check
+        if (b == null)
+            return false;
+        // type check and cast
+        if (getClass() != b.getClass()){
+            return false;
+        }
+
+        NFA nfa = (NFA) b;
+
+
+        boolean isNFA = Objects.equals(this.acceptingStates, nfa.acceptingStates)
+                && Objects.equals(this.alphabet, nfa.alphabet)
+                && Objects.equals(this.numStates, nfa.numStates)
+                && Objects.equals(this.initialState, nfa.initialState)
+                && Objects.equals(this.transitions, nfa.transitions);
+
+
+        return isNFA;
+
+
     }
 }

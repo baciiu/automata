@@ -3,6 +3,7 @@ package ab1.impl.Nachnamen;
 import ab1.exceptions.IllegalCharacterException;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 public class DFA extends NFA implements ab1.DFA {
@@ -21,10 +22,8 @@ public class DFA extends NFA implements ab1.DFA {
     public DFA(int numStates, Set<Character> characters, Set<Integer> acceptingStates, int initialState) {
         super(numStates, characters, acceptingStates, initialState);
 
-        this.numStates = numStates;
         this.alphabet = new HashSet<>(characters);
         this.acceptingStates = new HashSet<>(acceptingStates);
-        this.initialState = initialState;
 
         this.transitions = new Set[numStates][numStates];
 
@@ -104,9 +103,44 @@ public class DFA extends NFA implements ab1.DFA {
     }
 
     @Override
+    public void setTransition(int fromState, Character c, int toState) throws IllegalStateException, IllegalCharacterException {
+
+    }
+
+    @Override
+    public boolean equals(Object b){
+
+        // self check
+        if (this == b)
+            return true;
+        // null check
+        if (b == null)
+            return false;
+        // type check and cast
+        if (getClass() != b.getClass()){
+            return false;
+        }
+
+        DFA dfa = (DFA) b;
+
+
+        boolean isDFA = Objects.equals(this.acceptingStates, dfa.acceptingStates)
+                && Objects.equals(this.alphabet, dfa.alphabet)
+                && Objects.equals(this.numStates, dfa.numStates)
+                && Objects.equals(this.initialState, dfa.initialState)
+                && Objects.equals(this.transitions, dfa.transitions);
+
+
+        return isDFA;
+
+
+    }
+
+    @Override
     public Set<Character> getAlphabet() {
         return this.alphabet;
     }
+
 
     @Override
     public Set<Integer> getAcceptingStates() {

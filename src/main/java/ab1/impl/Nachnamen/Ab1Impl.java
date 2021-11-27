@@ -15,6 +15,7 @@ public class Ab1Impl implements Ab1 {
 		// TODO Auto-generated method stub
 
 
+
 		return new ab1.impl.Nachnamen.NFA(numStates,characters,acceptingStates,initialState);
 	}
 
