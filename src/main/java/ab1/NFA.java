@@ -38,7 +38,7 @@ public interface NFA {
 	 * 
 	 * @return Die Transiationsmatrix mit allen Übergängen
 	 */
-	public Set<Character>[][] getTransitions();
+	public Set[][] getTransitions();
 
 	/**
 	 * Setzt einen Übergang.

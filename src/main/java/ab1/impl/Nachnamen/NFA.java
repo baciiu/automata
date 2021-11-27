@@ -3,7 +3,6 @@ package ab1.impl.Nachnamen;
 import ab1.DFA;
 import ab1.exceptions.IllegalCharacterException;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,7 +14,7 @@ public class NFA implements ab1.NFA {
     private int numStates ; // anzahl von Zustände
     private final Character epsilon = null ; // leeres wort
 
-    private Set<Character>[][] transitions = null;
+    private Set<Character>[][] transitions ;
 
 
 
@@ -25,8 +24,14 @@ public class NFA implements ab1.NFA {
         this.alphabet = characters;
         this.acceptingStates = acceptingStates;
         this.initialState = initialState;
-        //this.transitions =
 
+        this.transitions = new Set[numStates][numStates];
+
+        for (int i = 0 ; i < numStates; i++){
+            for (int j = 0; j < numStates; j++){
+                this.transitions[i][j] = new HashSet<>();
+            }
+        }
 
     }
 
@@ -74,7 +79,7 @@ public class NFA implements ab1.NFA {
             throw new IllegalCharacterException();
         }
 
-        getTransitions()[fromState][toState].add(c);
+        this.transitions[fromState][toState].add(c);
 
     }
 
@@ -91,6 +96,7 @@ public class NFA implements ab1.NFA {
             if (getTransitions()[fromState][j].contains(c)){
                 getTransitions()[fromState][j].remove(c);
             }
+
             getTransitions()[fromState][j].clear();
         }
     }
