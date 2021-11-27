@@ -89,12 +89,7 @@ public class NFA implements ab1.NFA {
             throw new IllegalCharacterException();
         }
 
-        if ( c == epsilon ){
         this.transitions[fromState][toState].add(c);
-        }
-        else
-            this.transitions[fromState][toState].add(c);
-
 
     }
 
@@ -236,14 +231,27 @@ public class NFA implements ab1.NFA {
 
     @Override
     public Boolean acceptsNothing() {
+
      if (this.acceptingStates.size()==0){
          return true;
-     }else return false;
+     }
+     return false;
     }
 
     @Override
     public Boolean acceptsEpsilonOnly() {
-        return null;
+
+
+        for (int i = 0 ; i < numStates; i++){
+            for (int j = 0; j < numStates; j++){
+
+                if (!this.transitions[i][j].contains(epsilon)){
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 
     @Override
