@@ -59,14 +59,11 @@ public class DFA extends NFA implements ab1.DFA {
             throw new IllegalCharacterException();
         }
 
-        if ( getNextState(getCurrentState(),c) == null ){
+        if ( getNextState(getCurrentState(),c) == null  || getNextStates(getCurrentState(),c).size() > 1){
             throw new IllegalStateException();
         }
 
-        setTransition(getCurrentState(),c,getNextState(getCurrentState(),c));
-
         setCurrentState(getNextState(getCurrentState(),c));
-
 
         return getCurrentState();
     }
@@ -92,6 +89,28 @@ public class DFA extends NFA implements ab1.DFA {
         return null;
     }
 
+    @Override // DONE
+    public Set<Integer> getNextStates(int state, Character c) throws IllegalCharacterException, IllegalStateException {
+
+        if ( !(getInitialState() <= state) && !(state <= getNumStates()) ){
+            throw new IllegalStateException();
+        }
+
+        if (!getAlphabet().contains(c)){
+            throw new IllegalCharacterException();
+        }
+        Set<Integer> nextstates = new HashSet<>();
+
+        for (int j = 0 ; j <= getTransitions()[state].length; j++) {
+
+            if (getTransitions()[state][j].contains(c)) {
+                nextstates.add(j);
+            }
+        }
+
+        return nextstates;
+    }
+
     @Override
     public boolean isInAcceptingState() {
 
@@ -105,6 +124,14 @@ public class DFA extends NFA implements ab1.DFA {
     @Override
     public void setTransition(int fromState, Character c, int toState) throws IllegalStateException, IllegalCharacterException {
 
+        if ( !(getInitialState() <= fromState) && !(fromState <= getNumStates()) || !(getInitialState() <= toState) && !(toState <= getNumStates())){
+            throw new IllegalStateException();
+        }
+        if (!getAlphabet().contains(c) || c == epsilon ){
+            throw new IllegalCharacterException();
+        }
+
+        this.transitions[fromState][toState].add(c);
     }
 
     @Override
@@ -121,19 +148,39 @@ public class DFA extends NFA implements ab1.DFA {
             return false;
         }
 
-        DFA dfa = (DFA) b;
+       if (b instanceof NFA){
+           ((NFA) b).toDFA();
+       }
 
+       if (this.acceptingStates != ((DFA) b).getAcceptingStates() || this.alphabet != ((DFA) b).getAlphabet() ||
+                   this.numStates != ((DFA) b).getNumStates()|| this.initialState != ((DFA) b).getInitialState() ||
+                   this.transitions != ((DFA) b).getTransitions()){
 
-        boolean isDFA = Objects.equals(this.acceptingStates, dfa.acceptingStates)
-                && Objects.equals(this.alphabet, dfa.alphabet)
-                && Objects.equals(this.numStates, dfa.numStates)
-                && Objects.equals(this.initialState, dfa.initialState)
-                && Objects.equals(this.transitions, dfa.transitions);
+               return false;
+           }
+        return true;
+    }
+    @Override
+    public Boolean accepts(String w) throws IllegalCharacterException {
 
+        int currentState = this.initialState;
 
-        return isDFA;
+        for (int i = 0 ; i < w.length(); i++) {
 
+            if (!this.getAlphabet().contains(w.charAt(i))){
+                throw new IllegalCharacterException();
+            }
 
+            if (getNextState(currentState,w.charAt(i)) == null && getAcceptingStates().contains(currentState)){
+                return true;
+            }
+
+            if (getTransitions()[currentState][getNextState(currentState,w.charAt(i))].contains(w.charAt(i))){
+                currentState = getNextState(currentState,w.charAt(i)) ;
+            }
+        }
+
+        return false;
     }
 
     @Override
